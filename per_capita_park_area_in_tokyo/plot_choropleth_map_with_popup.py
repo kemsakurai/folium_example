@@ -70,7 +70,7 @@ def main():
         ).add_to(m)
 
     # 地図をhtml形式で出力
-    m.save(outfile="out/map_with_popup.html")
+    m.save(outfile="out/choropleth_map_with_popup.html")
 
 
 def __calulate_city_center(data):
