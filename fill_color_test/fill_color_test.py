@@ -83,12 +83,12 @@ def main():
             # Set3 :ng
 
             # threshold_scale 未指定で出力
-            m.choropleth(geo_data=data, data=df,
-                         columns=['A', 'AH'],
-                         key_on='feature.id',
-                         fill_color=color,
-                         line_opacity=0.5,
-                         reset=True)
+            # m.choropleth(geo_data=data, data=df,
+            #              columns=['A', 'AH'],
+            #              key_on='feature.id',
+            #              fill_color=color,
+            #              line_opacity=0.5,
+            #              reset=True)
             # BuGn :ok
             # BuPu :ok
             # GnBu :ok
@@ -119,6 +119,47 @@ def main():
             # Set2 :ng
             # Set3 :ng
             # 地図をhtml形式で出力
+
+            # threshold_scale 5つ指定して出力
+            m.choropleth(geo_data=data, data=df,
+                         columns=['A', 'AH'],
+                         key_on='feature.id',
+                         fill_color=color,
+                         threshold_scale=[0.9, 3.5, 7, 15, 27],
+                         line_opacity=0.5,
+                         reset=True)
+
+            # BuGn :ok
+            # BuPu :ok
+            # GnBu :ok
+            # OrRd :ok
+            # PuBu :ok
+            # PuBuGn :ok
+            # PuRd :ok
+            # RdPu :ok
+            # YlGn :ok
+            # YlGnBu :ok
+            # YlOrBr :ok
+            # YlOrRd :ok
+            # BrBg :ok
+            # PiYG :ok
+            # PRGn :ok
+            # PuOr :ok
+            # RdBu :ok
+            # RdGy :ok
+            # RdYlBu :ok
+            # RdYlGn :ok
+            # Spectral :ok
+            # Accent :ng
+            # Dark2 :ng
+            # Paired :ng
+            # Pastel1 :ng
+            # Pastel2 :ng
+            # Set1 :ng
+            # Set2 :ng
+            # Set3 :ng
+            # 地図をhtml形式で出力
+
             m.save(outfile="out/" + color + "_choropleth_map.html")
             print(color, ":ok")
         except:
